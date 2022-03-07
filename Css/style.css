@@ -13,6 +13,12 @@ header{
     justify-content: center;
     align-items: center;
 }
+.header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .header__logo { 
     width: 160px;
     border-radius: 50%;
@@ -42,44 +48,45 @@ header{
     opacity: 0.8;
 }
 .nav__menuLink:hover {
-    opacity: 1;;
-}
+    opacity: 1;
+    color: black;
+}     
 @media (min-width: 769px) {
     header {
         grid-auto-rows: 1fr;
-    }
-    header span {
-        display: none;
-    }    
+    } 
 }
 @media (max-width: 768px) {
-    header {
+    .nav__menu {
+        font-family: 'Barlow', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 12px; 
+        text-align: end;   
+    }
+    .header__containerPerfil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__container {
         flex-direction: row;
         justify-content: space-between;
     }
-    .header__containerPerfil {
-        margin: 12px;
-        align-content: space-between;
-    }
     .header__logo{
-        width: 120px;
+        width: 100px;
         margin: 12px;
         justify-content: center;
     }
     .header__title{
-        font-size: 16px ;
+        font-size: 14px ;
         text-align: center;
     }
-    header nav{
-        display: none;
-    }
     header span img {
-        width: 80px;
-        display: inline-block;
-        justify-content: left;
-        margin: 20px;
-        padding-top: 40px;        
-        cursor: pointer;
+        width: 60px;
+        justify-content: left;        
     }
 }
 @media (max-width: 320px) {
@@ -91,9 +98,7 @@ header{
         font-size: 10px;
     }
     header span img {
-        width: 40px;
-        margin: 20px;
-        padding-top: 16px;
+        width: 40px;;
     }
 }
 .main__container {
@@ -120,6 +125,20 @@ header{
     flex-direction: column;
     justify-content: center;
 }
+.efecto-texto img{
+    cursor: pointer;
+    transition: 0.6s;
+    overflow: hidden;
+}
+.efecto-texto img:hover {
+    opacity: 0.6;
+}
+.efecto-textoItem{
+    position: relative;
+}
+.efecto-textoItem:hover .descriptionText {
+    opacity: 1;
+}
 @media (max-width: 768px) {
     main h2 {
         font-size: 20px;
@@ -144,8 +163,49 @@ ul {
     padding-left: 12px;
     padding-right: 12px;
 }
+.footer__rrssLogo {
+    width: 40px;
+}
 .footer__rrssLogo:hover {
     transform: scale(1.2);
+}
+.mainAccordion{
+    padding-top: 12px;
+    margin-top: 12px;
+    padding-bottom: 12px;
+    border: 2px black;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+.accordion-body{
+    display: flex;
+    flex-direction: row;
+}
+.main__containerDw{
+    display: flex;
+    flex-wrap: wrap;
+}
+.main__containerDwLink{
+    width: 100px;
+}
+.main__containerDwLink h5{
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+.accordion-button:focus{
+    border-color: #7F7F7F;
+    box-shadow:none;
+}
+.accordion-button:not(.collapsed){
+    color: black;
+    background-color: #B4B3B3;
+} 
+.accordion-button{
+    font-family: 'Barlow', sans-serif;
+}
+.accordion-button:hover{
+    font-size: 18px;
 }
 .main-Arq {
     margin-top: 12px;
@@ -219,28 +279,34 @@ h4 {
     font-family: 'Barlow', sans-serif;
     font-size: 14px;
 }
+@media (max-width: 1200px) {
+    h3{
+        font-size: 20px;
+    }
+}
+@media (max-width: 992px) {
+    h3{
+        font-size: 16px;
+    }
+}
 @media (max-width: 768px) {
     .grid-container {
         display: flex;
         flex-direction: column;
-    }
-    main h3{
-        display: none;
-    }
+    }   
+    h3{
+            font-size: 24px;
+        }        
 }
 .main__articleAbout {
-    height: 600px;
+    height: 800px;
     font-family: 'Barlow', sans-serif;
     font-size: 16px;
-    background-image: url(../imagenes/Quien\ soy/fondo.jpg);
+    background-image: url(../imagenes/Quien\ soy/fondo3.jpg);
     background-repeat: no-repeat;
-    background-position: center;
     background-size:cover;
     background-attachment: fixed;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 160px;
-    padding-right: 160px;
+    padding: 12px 160px;
     margin-top: 12px;
     border: 2px black;
     border-top-style: solid;
@@ -284,50 +350,32 @@ h4 {
     background-color: gray;
 }
 .form__container{
-    width: 500px;
-    margin: auto;
+    width: 100%;
+
 }
 .butons{
     font-family: 'Barlow', sans-serif;
     width: 100%;
     border-radius: 5px;
-    padding: 4px;
+    padding: 16px;
     margin: 4px;
     border: 1px solid black;
-    margin: auto;
     cursor: pointer;
 }
 .controls {
     font-family: 'Barlow', sans-serif;
-    width: 490px;
+    width: 100%;
     border-radius: 5px;
-    padding: 4px;
+    padding: 16px;
     margin: 4px;
     border: 1px solid black;
-    margin: auto;
+    
 }
-@media (max-width: 540px) {
-    .form__container{
-        width: auto;
-        padding-left: 12px;
-        padding-right: 12px;
-        margin-left: 12px;
-        margin-right: 12px;
-    }
+@media (max-width: 320px) {
     .butons{
-        font-family: 'Barlow', sans-serif;
-        color: white;
-        width: 102%;
-        border-radius: 5px;
-        border: 1px solid black;
-        margin: auto;
-        background-color: black;
+        font-size: 10px;
     }
     .controls {
-        font-family: 'Barlow', sans-serif;
-        width: 100%;
-        border-radius: 5px;
-        border: 1px solid black;
-        margin: auto;
+        font-size: 10px;
     }
 }
