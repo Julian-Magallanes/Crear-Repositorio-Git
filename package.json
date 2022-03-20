@@ -1,0 +1,19 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass style.scss ./css/style.min.css -w --no-source-map -s compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julian-Magallanes/Aplicando-Sass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Julian-Magallanes/Aplicando-Sass/issues"
+  },
+  "homepage": "https://github.com/Julian-Magallanes/Aplicando-Sass#readme",
+  "description": ""
+}

@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.formularioTemplate {
+    font-family: $fontSubTitles;            
+    border-radius: 5px;
+    padding: 16px;
+    margin: 4px;
+    border: 1px solid black;
+}
+
+
+@mixin main ($fondo) {
+    font-family: $fontSubTitles;
+    background-color: $fondo ;
+    padding-top: 12px;
+    margin-top: 12px;
+    padding-bottom: 12px;
+    border: 2px black;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    text-align: center;
+}
+
+$estilos: (
+        alto: 160px,
+        borde: 50%,
+        margen: 20px,
+);
+
+@mixin center($extend: true) {
+    @if $extend {
+        @extend %center;
+    } @else {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+
+
+
